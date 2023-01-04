@@ -12,7 +12,7 @@ start_time = time.time()
 #while loop to repeat 10 times
 while i < 10:
     
-    f = open("C:\\Users\samee\Downloads\words.txt", "r")
+    f = open("words.txt", "r")
     
     array = []
     
