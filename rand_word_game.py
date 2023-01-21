@@ -3,9 +3,9 @@ import random
 import string
 import time
 
-#setting increment value and points
+#setting increment and score values
 i = 0
-points = 0
+score = 0
 
 start_time = time.time()
 
@@ -33,22 +33,37 @@ while i < 10:
     #checking if input matches output
     if input() == rand_word:
         
-        points += 1
-        
-        if i == 9:
-            
-            break
+        score += 1
 
 end_time = time.time()
 
-#calculating time taken depending on correctness and speed
-time_taken = round(1000 / (end_time - start_time), 2)
+#calculating time taken and points depending on correctness and speed
+time_taken = end_time - start_time
+time_based_pts = round(150 / time_taken, 1)
 
-#condition to create and control point-scoring system
-if not points == 0 and time_taken + points * 10 < 100.0:
-    
-    print("\n--You scored %s points--" %(time_taken + points * 10))
-    
+#outputting total points where user score is between 1 and 9, inclusive
+if score in range(1, 10):
+
+    if time_taken < 15.0:
+
+        print("\n--You scored %s points--" %((score - 1) * 10.0))
+
+    else:
+
+        print("\n--You scored %s points--" %(time_based_pts + (score - 1) * 10))
+
+#outputting total points for a perfect score
+elif score == 10:
+
+    if time_taken < 15.0:
+
+        print("\n--You scored 100.0 points--")
+
+    else:
+
+        print("\n--You scored %s points--" %(time_based_pts + (score - 1) * 10))
+
+#outputting total points for a zero score
 else:
-    
-    print("\n--You scored %s points--" %(points * 10.0))
+
+    print("\n--You scored 0.0 points--")
