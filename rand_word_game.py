@@ -50,7 +50,7 @@ if score in range(1, 10):
 
     else:
 
-        print("\n--You scored %s points--" %(time_based_pts + (score - 1) * 10))
+        print("\n--You scored %s points--" %(time_based_pts + score * 10))
 
 #outputting total points for a perfect score
 elif score == 10:
