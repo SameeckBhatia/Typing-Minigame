@@ -46,7 +46,7 @@ if score in range(1, 10):
 
     if time_taken < 15.0:
 
-        print("\n--You scored %s points--" %((score - 1) * 10.0))
+        print("\n--You scored %s points--" %((score) * 10.0))
 
     else:
 
